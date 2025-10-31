@@ -1,0 +1,6 @@
+mat-card{max-width: 100%;}
+.feature-card{transition: transform 160ms ease, box-shadow 160ms ease; will-change: transform;}
+.feature-card:hover,.feature-card:focus-within{transform: translateY(-2px) scale(1.01); box-shadow: 0 10px 26px rgba(2, 6, 23, 0.16); outline: none;}
+.desktop-nav{display:flex;}
+.mobile-burger{display:none;}
+@media (max-width: 768px){.desktop-nav{display:none !important;} .mobile-burger{display:inline-flex !important;}}
