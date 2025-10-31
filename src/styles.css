@@ -1,0 +1,2 @@
+:root {--primary-color: #4E2A1E; --accent-color:#C47E4E; --bg:#FAF7F2;}
+body {margin:0; font-family: Roboto, 'Helvetica Neue', sans-serif; background: var(--bg); color:#2B2B2B;} a{color:inherit;}
