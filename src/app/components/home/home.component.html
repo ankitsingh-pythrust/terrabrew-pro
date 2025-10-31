@@ -1,0 +1,318 @@
+<div style="font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial; color:#2B2B2B; line-height:1.6;">
+  <!-- Header (no buttons) -->
+  <div style="background:linear-gradient(90deg,#4E2A1E,#6a3c2d); color:#fff; padding:0 24px; height:100px; display:flex; align-items:center; justify-content:space-between; position:sticky; top:0; z-index:1000; white-space:nowrap;">
+    <div style="display:flex; align-items:center; gap:24px; white-space:nowrap;">
+      <span style="font-weight:800; letter-spacing:0.6px; font-size:20px; font-family: 'Segoe UI', Roboto, Helvetica, Arial;">TERRABREW PRO</span>
+      <nav class="desktop-nav" style="display:flex; gap:16px; align-items:center;">
+        <a href="#why" (click)="$event.preventDefault(); scrollTo('why')" style="text-decoration:none; color:#F5EDE6; font-weight:500;">Why TerraBrew</a>
+        <a href="#features" (click)="$event.preventDefault(); scrollTo('features')" style="text-decoration:none; color:#F5EDE6; font-weight:500;">Features</a>
+        <a href="#plans" (click)="$event.preventDefault(); scrollTo('plans')" style="text-decoration:none; color:#F5EDE6; font-weight:500;">Bundles & Kits</a>
+        <a href="#testimonials" (click)="$event.preventDefault(); scrollTo('testimonials')" style="text-decoration:none; color:#F5EDE6; font-weight:500;">Testimonials</a>
+        <a href="#contact" (click)="$event.preventDefault(); scrollTo('contact')" style="text-decoration:none; color:#F5EDE6; font-weight:500;">Contact</a>
+      </nav>
+    </div>
+    <a class="mobile-burger" href="#" (click)="toggleMenu($event)" aria-label="Toggle menu" style="display:none; color:#fff; align-items:center;"><mat-icon>menu</mat-icon></a>
+  </div>
+  <!-- Mobile menu card -->
+  <div *ngIf="menuOpen" class="mobile-menu" style="position:fixed; top:100px; left:0; right:0; background:#ffffff; border-bottom:1px solid #e5e7eb; box-shadow:0 10px 30px rgba(2,6,23,0.08); padding:12px 16px; z-index:999;">
+    <div style="display:flex; justify-content:flex-end;">
+      <a href="#" (click)="toggleMenu($event)" aria-label="Close menu" style="color:#4E2A1E; text-decoration:none; display:inline-flex; align-items:center; gap:6px;"><mat-icon>close</mat-icon>Close</a>
+    </div>
+    <nav style="display:flex; flex-direction:column; gap:10px; padding:8px 0;">
+      <a href="#why" (click)="$event.preventDefault(); scrollTo('why'); closeMenu()" style="text-decoration:none; color:#2B2B2B; font-weight:600;">Why TerraBrew</a>
+      <a href="#features" (click)="$event.preventDefault(); scrollTo('features'); closeMenu()" style="text-decoration:none; color:#2B2B2B; font-weight:600;">Features</a>
+      <a href="#plans" (click)="$event.preventDefault(); scrollTo('plans'); closeMenu()" style="text-decoration:none; color:#2B2B2B; font-weight:600;">Bundles & Kits</a>
+      <a href="#testimonials" (click)="$event.preventDefault(); scrollTo('testimonials'); closeMenu()" style="text-decoration:none; color:#2B2B2B; font-weight:600;">Testimonials</a>
+      <a href="#contact" (click)="$event.preventDefault(); scrollTo('contact'); closeMenu" style="text-decoration:none; color:#2B2B2B; font-weight:600;">Contact</a>
+    </nav>
+  </div>
+
+  <!-- Hero -->
+  <section id="hero" style="background:linear-gradient(180deg,#FAF7F2,#FFFFFF); padding:56px 16px;">
+    <mat-card style="max-width:1100px; margin:0 auto; padding:32px; border-radius:16px; box-shadow:0 10px 30px rgba(2,6,23,0.08); background:#fff;">
+      <div style="display:flex; flex-wrap:wrap; gap:24px; align-items:center; justify-content:space-between;">
+        <div style="flex:1 1 420px;">
+          <h1 style="margin:0 0 12px 0; font-size:40px; line-height:1.2; color:#2B2B2B;">Café-level espresso at home—every single shot</h1>
+          <p style="margin:0 0 16px 0; font-size:16px; color:#4b4b4b;">TerraBrew Pro uses PID temperature control and gentle 9‑bar pre‑infusion to unlock rich, balanced flavor in 30 seconds.</p>
+          <ul style="margin:0 0 20px 18px; color:#4b4b4b;">
+            <li>Heat-up in 30s with stable 93°C brewing</li>
+            <li>Integrated conical burr grinder with precise dosing</li>
+            <li>Auto-clean reminders keep performance peak</li>
+          </ul>
+          <div style="display:flex; gap:12px; flex-wrap:wrap;">
+            <button mat-raised-button color="primary" style="background:#4E2A1E; color:#fff; padding:0 20px; height:44px; border-radius:8px; font-weight:600;" (click)="scrollTo('features')">Explore features</button>
+            <button mat-stroked-button style="height:44px; border-radius:8px; border-color:#C47E4E; color:#4E2A1E;" (click)="scrollTo('plans')">See bundles & kits</button>
+          </div>
+          <p style="margin:12px 0 0 0; font-size:12px; color:#6b6b6b;">Free shipping, 2‑year warranty, 30‑day returns</p>
+        </div>
+      </div>
+    </mat-card>
+  </section>
+
+  <!-- Why TerraBrew -->
+  <section id="why" style="padding:48px 16px; background:#ffffff;">
+    <div style="max-width:1100px; margin:0 auto;">
+      <h2 style="margin:0 0 8px 0; font-size:28px; color:#2B2B2B;">Why TerraBrew</h2>
+      <p style="margin:0 0 24px 0; color:#4b4b4b;">Outcomes that matter: taste, speed, size, and value.</p>
+      <div style="display:flex; flex-wrap:wrap; gap:16px;">
+        <mat-card class="feature-card" style="flex:1 1 240px; min-width:240px; border-radius:12px; padding:18px; border:1px solid #e7e5e4;">
+          <mat-card-title style="font-size:18px; color:#2B2B2B; margin-bottom:6px;">Better taste, not guesswork</mat-card-title>
+          <mat-card-content style="color:#4b4b4b;">PID temperature control and calibrated pre‑infusion remove the variables that ruin flavor—so your morning shot is sweet and consistent. <span style="display:block; margin-top:8px; color:#6b6b6b;">Blind taste tests showed 28% more positive flavor notes vs. non‑PID machines.</span></mat-card-content>
+        </mat-card>
+        <mat-card class="feature-card" style="flex:1 1 240px; min-width:240px; border-radius:12px; padding:18px; border:1px solid #e7e5e4;">
+          <mat-card-title style="font-size:18px; color:#2B2B2B; margin-bottom:6px;">Faster mornings</mat-card-title>
+          <mat-card-content style="color:#4b4b4b;">From cold to first pour in 30 seconds, with volumetric dosing for hands‑off repeatability. <span style="display:block; margin-top:8px; color:#6b6b6b;">Average home workflow cut to under 2 minutes per drink.</span></mat-card-content>
+        </mat-card>
+        <mat-card class="feature-card" style="flex:1 1 240px; min-width:240px; border-radius:12px; padding:18px; border:1px solid #e7e5e4;">
+          <mat-card-title style="font-size:18px; color:#2B2B2B; margin-bottom:6px;">Smaller footprint</mat-card-title>
+          <mat-card-content style="color:#4b4b4b;">A compact stainless-steel body fits under cabinets without sacrificing a full-size 58mm portafilter. <span style="display:block; margin-top:8px; color:#6b6b6b;">Width: 7.3 in (186 mm)—smaller than a sheet of paper.</span></mat-card-content>
+        </mat-card>
+        <mat-card class="feature-card" style="flex:1 1 240px; min-width:240px; border-radius:12px; padding:18px; border:1px solid #e7e5e4;">
+          <mat-card-title style="font-size:18px; color:#2B2B2B; margin-bottom:6px;">Less waste, more value</mat-card-title>
+          <mat-card-content style="color:#4b4b4b;">Built-in grinder and paperless metal filter options reduce waste and ongoing costs. <span style="display:block; margin-top:8px; color:#6b6b6b;">Save up to $18/month by ditching single-use pods.</span></mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section id="features" style="padding:48px 16px; background:#ffffff;">
+    <div style="max-width:1100px; margin:0 auto;">
+      <h2 style="margin:0 0 8px 0; font-size:28px; color:#2B2B2B;">Features</h2>
+      <p style="margin:0 0 24px 0; color:#4b4b4b;">Cafe-grade hardware tuned for reliability and taste.</p>
+      <div style="display:flex; flex-wrap:wrap; gap:16px;">
+        <mat-card class="feature-card" style="flex:1 1 240px; min-width:240px; border-radius:12px; padding:20px; border:1px solid #e7e5e4;">
+          <div style="display:flex; align-items:center; gap:8px; margin-bottom:6px; color:#4E2A1E;"><mat-icon>thermostat</mat-icon><strong>PID Temperature Control</strong></div>
+          <div style="color:#4b4b4b;">Holds water at a stable 93°C so espresso tastes balanced and sweet shot after shot.</div>
+        </mat-card>
+        <mat-card class="feature-card" style="flex:1 1 240px; min-width:240px; border-radius:12px; padding:20px; border:1px solid #e7e5e4;">
+          <div style="display:flex; align-items:center; gap:8px; margin-bottom:6px; color:#4E2A1E;"><mat-icon>water_drop</mat-icon><strong>Gentle Pre‑Infusion</strong></div>
+          <div style="color:#4b4b4b;">A low-pressure bloom evens extraction to reduce channeling and bitterness.</div>
+        </mat-card>
+        <mat-card class="feature-card" style="flex:1 1 240px; min-width:240px; border-radius:12px; padding:20px; border:1px solid #e7e5e4;">
+          <div style="display:flex; align-items:center; gap:8px; margin-bottom:6px; color:#4E2A1E;"><mat-icon>coffee</mat-icon><strong>Integrated Burr Grinder</strong></div>
+          <div style="color:#4b4b4b;">48mm conical burrs with timed dosing for consistent 18–20 g baskets.</div>
+        </mat-card>
+        <mat-card class="feature-card" style="flex:1 1 240px; min-width:240px; border-radius:12px; padding:20px; border:1px solid #e7e5e4;">
+          <div style="display:flex; align-items:center; gap:8px; margin-bottom:6px; color:#4E2A1E;"><mat-icon>cleaning_services</mat-icon><strong>Auto‑Clean & Descale</strong></div>
+          <div style="color:#4b4b4b;">Smart reminders and one‑touch cycles keep internals spotless and shots tasting fresh.</div>
+        </mat-card>
+      </div>
+      <p style="margin:18px 0 0 0; color:#6b6b6b;">1450W thermoblock, 58mm commercial portafilter, adjustable OPV, stainless steel body, and food‑grade lines rated to 9 bar brewing pressure.</p>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" style="padding:48px 16px; background:#fff;">
+    <div style="max-width:1100px; margin:0 auto;">
+      <h2 style="margin:0 0 8px 0; font-size:28px; color:#2B2B2B;">About the Machine</h2>
+      <mat-card style="border-radius:12px; padding:20px; border:1px solid #e7e5e4; background:#ffffff;">
+        <p style="margin:0 0 16px 0; color:#4b4b4b;">TerraBrew Pro is engineered for reliability and taste. The stainless-steel chassis resists corrosion, the thermoblock stabilizes temperature quickly, and the grinder delivers uniform particle size. We assemble in small batches and test every unit before it ships.</p>
+        <div style="display:flex; flex-wrap:wrap; gap:20px;">
+          <div style="flex:1 1 300px; min-width:260px;">
+            <h3 style="margin:0 0 8px 0; font-size:18px; color:#2B2B2B;">Highlights</h3>
+            <ul style="margin:0; padding-left:18px; color:#4b4b4b;">
+              <li>304 stainless-steel body and 58mm portafilter</li>
+              <li>Integrated 2L removable water tank with filter</li>
+              <li>Energy‑save idle mode drops power draw after 10 minutes</li>
+              <li>Designed for easy upkeep with tool‑free access</li>
+            </ul>
+          </div>
+          <div style="flex:1 1 300px; min-width:260px;">
+            <h3 style="margin:0 0 8px 0; font-size:18px; color:#2B2B2B;">Specs</h3>
+            <ul style="margin:0; padding-left:18px; color:#4b4b4b;">
+              <li>Dimensions: 186 × 320 × 360 mm</li>
+              <li>Weight: 7.8 kg</li>
+              <li>Water tank: 2.0 L</li>
+              <li>Power: 1450 W, 120V (US) or 230V (EU) models</li>
+              <li>Included: 58mm portafilter, single/double baskets, tamper, milk pitcher, cleaning kit</li>
+            </ul>
+          </div>
+        </div>
+      </mat-card>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section id="howItWorks" style="padding:48px 16px; background:#FAF7F2;">
+    <div style="max-width:1100px; margin:0 auto;">
+      <h2 style="margin:0 0 8px 0; font-size:28px; color:#2B2B2B;">How It Works</h2>
+      <div style="display:flex; flex-wrap:wrap; gap:16px;">
+        <mat-card style="flex:1 1 240px; min-width:240px; border:1px solid #e7e5e4; border-radius:12px; padding:18px;">
+          <div style="font-weight:700; color:#4E2A1E;">1. Grind & dose <span style="color:#6b6b6b; font-weight:400;">(15–25s)</span></div>
+          <p style="margin:8px 0 0 0; color:#4b4b4b;">Add beans to the hopper and select your grind time. The integrated grinder doses consistently for your basket size.</p>
+        </mat-card>
+        <mat-card style="flex:1 1 240px; min-width:240px; border:1px solid #e7e5e4; border-radius:12px; padding:18px;">
+          <div style="font-weight:700; color:#4E2A1E;">2. Tamp & lock in <span style="color:#6b6b6b; font-weight:400;">(10s)</span></div>
+          <p style="margin:8px 0 0 0; color:#4b4b4b;">Distribute, tamp firmly, and lock the 58mm portafilter into the group head.</p>
+        </mat-card>
+        <mat-card style="flex:1 1 240px; min-width:240px; border:1px solid #e7e5e4; border-radius:12px; padding:18px;">
+          <div style="font-weight:700; color:#4E2A1E;">3. Pre‑infuse & extract <span style="color:#6b6b6b; font-weight:400;">(25–30s)</span></div>
+          <p style="margin:8px 0 0 0; color:#4b4b4b;">Choose single or double. TerraBrew pre‑infuses, then extracts at 9 bar for a syrupy, even shot.</p>
+        </mat-card>
+        <mat-card style="flex:1 1 240px; min-width:240px; border:1px solid #e7e5e4; border-radius:12px; padding:18px;">
+          <div style="font-weight:700; color:#4E2A1E;">4. Steam & serve <span style="color:#6b6b6b; font-weight:400;">(30–45s)</span></div>
+          <p style="margin:8px 0 0 0; color:#4b4b4b;">Texture milk with the powerful steam wand and pour. Auto‑clean cycle runs when you're done.</p>
+        </mat-card>
+      </div>
+    </div>
+  </section>
+
+  <!-- Plans -->
+  <section id="plans" style="padding:48px 16px; background:#ffffff;">
+    <div style="max-width:1100px; margin:0 auto;">
+      <h2 style="margin:0 0 8px 0; font-size:28px; color:#2B2B2B;">Bundles & Kits</h2>
+      <p style="margin:0 0 24px 0; color:#4b4b4b;">Choose the setup that fits your counter and your routine.</p>
+      <div style="display:flex; flex-wrap:wrap; gap:16px;">
+        <mat-card style="flex:1 1 300px; min-width:280px; border:1px solid #e7e5e4; border-radius:14px; padding:20px; background:#ffffff;">
+          <mat-card-title style="font-size:18px; color:#2B2B2B;">Solo Machine</mat-card-title>
+          <div style="margin:6px 0 14px 0; font-size:24px; color:#2B2B2B;">From $599</div>
+          <ul style="padding-left:18px; margin:0 0 16px 0; color:#4b4b4b;">
+            <li>TerraBrew Pro machine</li>
+            <li>2‑year warranty</li>
+            <li>Free shipping</li>
+          </ul>
+          <button mat-stroked-button style="width:100%; border-color:#C47E4E; color:#4E2A1E; height:42px;">Buy now</button>
+        </mat-card>
+        <mat-card style="flex:1 1 300px; min-width:280px; border:2px solid #4E2A1E; border-radius:16px; padding:22px; background:#4E2A1E; color:#F8F5F2; transform:translateY(-4px); box-shadow:0 12px 30px rgba(2,6,23,0.15);">
+          <mat-card-title style="font-size:18px; color:#F8F5F2;">Home Barista Kit</mat-card-title>
+          <div style="margin:6px 0 14px 0; font-size:24px; color:#F8F5F2;">Best value — $699</div>
+          <ul style="padding-left:18px; margin:0 0 16px 0; color:#F5EDE6;">
+            <li>TerraBrew Pro + 58mm bottomless portafilter</li>
+            <li>Milk pitcher, tamping mat, and precision basket</li>
+            <li>Water filter starter pack</li>
+          </ul>
+          <button mat-raised-button color="accent" style="width:100%; height:44px; background:#C47E4E; color:#2B2B2B; font-weight:700;">Add to cart</button>
+        </mat-card>
+        <mat-card style="flex:1 1 300px; min-width:280px; border:1px solid #e7e5e4; border-radius:14px; padding:20px; background:#ffffff;">
+          <mat-card-title style="font-size:18px; color:#2B2B2B;">Office Starter Bundle</mat-card-title>
+          <div style="margin:6px 0 14px 0; font-size:24px; color:#2B2B2B;">From $949</div>
+          <ul style="padding-left:18px; margin:0 0 16px 0; color:#4b4b4b;">
+            <li>TerraBrew Pro + extra basket set</li>
+            <li>Extended 3‑year support</li>
+            <li>Bulk filter cartridges</li>
+          </ul>
+          <button mat-stroked-button style="width:100%; border-color:#C47E4E; color:#4E2A1E; height:42px;">Order for office</button>
+        </mat-card>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section id="testimonials" style="padding:48px 16px; background:#ffffff;">
+    <div style="max-width:1100px; margin:0 auto;">
+      <h2 style="margin:0 0 8px 0; font-size:28px; color:#2B2B2B;">What people say</h2>
+      <p style="margin:0 0 24px 0; color:#4b4b4b;">Feedback from early owners and office teams.</p>
+      <div style="display:flex; flex-wrap:wrap; gap:16px;">
+        <mat-card style="flex:1 1 320px; min-width:280px; border:1px solid #e7e5e4; border-radius:12px; padding:18px;">
+          <p style="margin:0 0 6px 0; color:#2B2B2B; font-weight:600;">Maya Chen</p>
+          <p style="margin:0 0 6px 0; color:#6b6b6b;">Home Barista, Portland OR</p>
+          <p style="margin:0; color:#4b4b4b;">“I can finally taste the sweetness in my espresso—every shot is consistent.”</p>
+        </mat-card>
+        <mat-card style="flex:1 1 320px; min-width:280px; border:1px solid #e7e5e4; border-radius:12px; padding:18px;">
+          <p style="margin:0 0 6px 0; color:#2B2B2B; font-weight:600;">Luis Ortega</p>
+          <p style="margin:0 0 6px 0; color:#6b6b6b;">Office Manager, Nook Studio</p>
+          <p style="margin:0; color:#4b4b4b;">“Fast heat-up and easy cleanup. Our team queues less and enjoys better coffee.”</p>
+        </mat-card>
+        <mat-card style="flex:1 1 320px; min-width:280px; border:1px solid #e7e5e4; border-radius:12px; padding:18px;">
+          <p style="margin:0 0 6px 0; color:#2B2B2B; font-weight:600;">Sofia Martins</p>
+          <p style="margin:0 0 6px 0; color:#6b6b6b;">Coffee Blogger, Bean & Bloom</p>
+          <p style="margin:0; color:#4b4b4b;">“PID control and pre‑infusion deliver café results. Impressive build for the price.”</p>
+        </mat-card>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" style="padding:48px 16px; background:#FAF7F2;">
+    <div style="max-width:1100px; margin:0 auto;">
+      <h2 style="margin:0 0 8px 0; font-size:28px; color:#2B2B2B;">FAQ</h2>
+      <mat-accordion>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <span>Does it work with light and dark roasts?</span>
+          </mat-expansion-panel-header>
+          <p style="margin:0; color:#4b4b4b;">Yes. Adjust grind and dose; the PID keeps temperature stable for both profiles.</p>
+        </mat-expansion-panel>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <span>Is it compatible with 220–240V power?</span>
+          </mat-expansion-panel-header>
+          <p style="margin:0; color:#4b4b4b;">We offer region‑specific models. Choose your voltage at checkout.</p>
+        </mat-expansion-panel>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <span>How often do I descale?</span>
+          </mat-expansion-panel-header>
+          <p style="margin:0; color:#4b4b4b;">The machine tracks water hardness and usage, then reminds you—typically every 2–3 months.</p>
+        </mat-expansion-panel>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <span>What's the return policy?</span>
+          </mat-expansion-panel-header>
+          <p style="margin:0; color:#4b4b4b;">Try it for 30 days. If it's not a fit, return it in original condition for a full refund.</p>
+        </mat-expansion-panel>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <span>Can I use pre‑ground coffee?</span>
+          </mat-expansion-panel-header>
+          <p style="margin:0; color:#4b4b4b;">Yes. Use the included single‑wall baskets and set the grinder to bypass.</p>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" style="padding:48px 16px; background:#ffffff;">
+    <div style="max-width:1100px; margin:0 auto;">
+      <h2 style="margin:0 0 8px 0; font-size:28px; color:#2B2B2B;">Contact</h2>
+      <mat-card style="border-radius:12px; padding:20px; border:1px solid #e7e5e4; background:#ffffff;">
+        <div style="display:flex; flex-wrap:wrap; gap:20px; align-items:flex-start;">
+          <div style="flex:1 1 300px; min-width:260px; color:#4b4b4b;">
+            <p style="margin:0 0 8px 0;">Email: <a href="mailto:support&#64;terrabrew.com" style="color:#4E2A1E; text-decoration:none;">support&#64;terrabrew.com</a></p>
+            <p style="margin:0 0 8px 0;">Phone: +1 (888) 214‑BREW</p>
+            <p style="margin:0 0 8px 0;">Hours: Mon–Fri, 9:00–18:00 (local time)</p>
+            <p style="margin:0;">Address: 184 Roastery Lane, Suite 200, Seattle, WA 98101</p>
+          </div>
+          <div style="flex:1 1 300px; min-width:260px;">
+            <div style="background:#FAF7F2; border:1px dashed #e7e5e4; border-radius:8px; padding:16px; color:#6b6b6b;">Map placeholder — centered on Seattle HQ</div>
+            <div style="margin-top:12px; display:flex; gap:12px;">
+              <button mat-raised-button color="primary" style="background:#4E2A1E; color:#fff;">Request a quick consult</button>
+            </div>
+          </div>
+        </div>
+      </mat-card>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer style="background:#2B2B2B; color:#e6e6e6;">
+    <div style="max-width:1100px; margin:0 auto; padding:28px 16px; display:flex; flex-wrap:wrap; gap:24px; align-items:flex-start; justify-content:space-between;">
+      <div style="min-width:220px;">
+        <div style="font-weight:700; margin-bottom:6px;">TERRABREW PRO</div>
+        <div style="font-size:13px; color:#cfcfcf;">TerraBrew builds thoughtfully engineered coffee gear that brings café craftsmanship to everyday kitchens. Every unit is batch‑tested and backed by real humans.</div>
+      </div>
+      <div style="display:flex; gap:32px; flex-wrap:wrap;">
+        <div>
+          <div style="font-weight:600; margin-bottom:8px; color:#ffffff;">Product</div>
+          <a href="#features" (click)="$event.preventDefault(); scrollTo('features')" style="display:block; text-decoration:none; color:#e6e6e6; margin-bottom:6px;">Features</a>
+          <a href="#plans" (click)="$event.preventDefault(); scrollTo('plans')" style="display:block; text-decoration:none; color:#e6e6e6; margin-bottom:6px;">Pricing/Plans</a>
+          <a href="#" style="display:block; text-decoration:none; color:#e6e6e6;">Docs</a>
+        </div>
+        <div>
+          <div style="font-weight:600; margin-bottom:8px; color:#ffffff;">Company</div>
+          <a href="#about" (click)="$event.preventDefault(); scrollTo('about')" style="display:block; text-decoration:none; color:#e6e6e6; margin-bottom:6px;">About</a>
+          <a href="#" style="display:block; text-decoration:none; color:#e6e6e6; margin-bottom:6px;">Careers</a>
+          <a href="#contact" (click)="$event.preventDefault(); scrollTo('contact')" style="display:block; text-decoration:none; color:#e6e6e6;">Contact</a>
+        </div>
+        <div>
+          <div style="font-weight:600; margin-bottom:8px; color:#ffffff;">Legal</div>
+          <a href="#" style="display:block; text-decoration:none; color:#e6e6e6; margin-bottom:6px;">Privacy</a>
+          <a href="#" style="display:block; text-decoration:none; color:#e6e6e6;">Terms</a>
+        </div>
+      </div>
+    </div>
+    <mat-divider style="border-top-color:#3a3a3a;"></mat-divider>
+    <div style="max-width:1100px; margin:0 auto; padding:14px 16px; font-size:12px; color:#cfcfcf;">© 2025 terrabrew-pro. All rights reserved.</div>
+  </footer>
+</div>
